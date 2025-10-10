@@ -1,67 +1,141 @@
-/*
-Author: 
-File Name: 
-Date: 
-*/
-
-/* CSS Reset */
-body, header, nav, main, footer, h1, div, img, ul {
+/* --- Global Mobile-First Styles --- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    border: 0;
+    background-color: #fffaf5;
+    color: #333;
 }
 
-/* Style rule for body and images */
-body {
-	background-color: #e4f1f6;
-}
-
-/* Style rule for header */
+/* Header */
 header {
-	font-family: Verdana, Arial, sans-serif;
-	text-align: center;
-    padding: 3%;
-    color: #092834;
-    margin-top: 5%;
+    background-color: #2b2b2b;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Style rules for nav */
-nav {
-	padding: 1%;
-    margin-bottom: 1%;
-    background-color: #67afcb;
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
 }
 
+header p {
+    font-size: 1rem;
+    margin: 10px 0 0;
+}
+
+/* Navigation */
 nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #ff7f50;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
 nav li {
-    font-size: 1.5em;
-    padding: 4%;
+    border-bottom: 1px solid #fff;
 }
 
-nav li a {
-    display: block;
-    color: #092834;
+nav a {
+    color: white;
     text-decoration: none;
+    display: block;
+    padding: 12px;
+    font-weight: bold;
 }
 
-/* Style rules for main content  */
+nav a:hover,
+nav a.active {
+    background-color: #ff9466;
+}
+
+/* Main Content */
 main {
-	display: block;
-	margin: 1% 1% 15%;
-	padding: 1%;
-    font-size: 1.5em;
+    padding: 20px;
 }
 
-#image {
-    margin-bottom: 1%;
+main h2 {
+    text-align: center;
+    color: #222;
 }
 
-/* Style rule for footer */
+main p {
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Featured Instruments */
+.featured {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.instrument-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.instrument-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer */
 footer {
-	font-size: .70em;
-	text-align: center;
-	margin-top: 2em;
+    background-color: #2b2b2b;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablets and up (≥576px) */
+@media (min-width: 576px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav li {
+        border: none;
+    }
+
+    nav a {
+        padding: 14px 20px;
+    }
+
+    .instrument-grid {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .instrument-grid img {
+        width: 32%;
+    }
+}
+
+/* Desktops (≥992px) */
+@media (min-width: 992px) {
+    body {
+        max-width: 1100px;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        padding: 40px;
+    }
 }
